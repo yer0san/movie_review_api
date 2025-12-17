@@ -22,6 +22,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-4)*cj+&a(lt@6wtyvs5%zxrq4nnmx77)8r)(36vozx29092=2_'
 
+import os
+from dotenv import load_dotenv
+
+
+load_dotenv(BASE_DIR / ".env")
+
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
+TMDB_BASE_URL = "https://api.themoviedb.org/3"
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
