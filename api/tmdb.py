@@ -48,6 +48,7 @@ def get_movie_by_id(external_id):
     response = requests.get(url, params=params)
 
     if response.status_code != 200:
+        print(response)
         return None
 
     data = response.json()
